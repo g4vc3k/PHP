@@ -1,0 +1,49 @@
+{extends file="../../templates/main.html"}
+
+{block name=header}{/block}
+
+{block name=footer}{/block}
+
+{block name=content}
+
+			<header id="header">
+				<div class="content">
+					<h4>Kalkulator zużycia prądu</h4>
+<form action="{$conf->app_url}/app/calc.php" method="post">
+	<label for="id_login">Login: </label>
+	<input id="id_login" type="text" name="login" value="{$form->login}" /><br />
+    
+	<label for="id_pass">Haslo: </label>
+	<input id="id_pass" type="password" name="pass" value="{$form->pass}" /><br />
+    
+    
+
+    <input type="submit" value="Zaloguj" />
+</form>	
+
+	{if $msgs->isError()}
+	<h2>Wystąpiły błędy: </h2>
+	<div>
+	<ol>
+	{foreach $msgs->getErrors() as $err}
+	{strip}
+		<li>{$err}</li>
+	{/strip}
+	{/foreach}
+	</ol>
+	</div>
+{/if}
+
+				</div>
+				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
+			</header>
+
+
+			<script src="{$conf->app_url}/assets/js/jquery.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/jquery.scrolly.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/browser.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/breakpoints.min.js"></script>
+			<script src="{$conf->app_url}/assets/js/util.js"></script>
+			<script src="{$conf->app_url}/assets/js/main.js"></script>
+
+{/block}
