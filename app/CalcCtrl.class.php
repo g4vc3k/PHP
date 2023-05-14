@@ -7,7 +7,7 @@ require_once $conf->root_path.'/app/security/LoginCtrl.class.php';
 
 include $conf->root_path.'/app/security/check.php';
 
-//pobranie parametrów
+
 
 class CalcCtrl {
 	private $msgs;
@@ -26,12 +26,11 @@ public function __construct(){
         $this->form->cena = isset($_REQUEST['cena']) ? $_REQUEST['cena'] : null;
     }
 
-//walidacja parametrów z przygotowaniem zmiennych dla widoku
+
 public function validate(){
-	// sprawdzenie, czy parametry zostały przekazane
+
 	if ( ! (isset($this->form->moc) && isset($this->form->czas) && isset($this->form->cena))) {
-		// sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
-		// teraz zakładamy, ze nie jest to błąd. Po prostu nie wykonamy obliczeń
+
 		return false;
     }
 
@@ -46,7 +45,7 @@ if ( $this->form->cena == "") {
     $this->msgs->addError('Nie podano ceny');
 }
 
-	// sprawdzenie, czy $x i $y są liczbami całkowitymi
+
 	if (! is_numeric( $this->form->moc )) {
 		$this->msgs->addError('Pierwsza wartość nie jest liczbą całkowitą');
 	}
@@ -111,7 +110,7 @@ public function process(){
 		$smarty->assign('conf',$conf);
 		$smarty->assign('role',$role);
 	
-		$smarty->assign('page_title','Kalkulator');
+		$smarty->assign('page_title','Kalkulator zużycia prądu');
 		
 		$smarty->assign('msgs',$this->msgs);
 		$smarty->assign('form',$this->form);

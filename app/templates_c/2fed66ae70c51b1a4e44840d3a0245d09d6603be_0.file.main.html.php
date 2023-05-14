@@ -68,7 +68,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_584716936645188b30
 					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 				</ul>
-				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+				<p class="copyright">&copy; Wykonał: Gracjan Knopik. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
 			</footer>
         </div>
 	
